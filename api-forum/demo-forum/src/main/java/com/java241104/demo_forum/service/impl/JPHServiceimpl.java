@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import com.java241104.demo_forum.model.CommentPlaceHolder;
+import com.java241104.demo_forum.model.PostPlaceHolder;
 import com.java241104.demo_forum.model.UserPlaceHolder;
 import com.java241104.demo_forum.service.JPHService;
 import com.java241104.demo_forum.util.UrlManager;
@@ -15,7 +17,7 @@ public class JPHServiceimpl implements JPHService {
   private UrlManager urlManager;
   @Autowired
   private RestTemplate restTemplate;
-  
+
   @Value("${api.jsonplaceholder.endpoint.users}")
   private String userEndpoint;
 
@@ -30,4 +32,16 @@ public class JPHServiceimpl implements JPHService {
     return List.of(restTemplate.getForObject(urlManager.getUrl(userEndpoint),
         UserPlaceHolder[].class));
   }
+
+  @Override
+  public List<PostPlaceHolder> getPostRawdata() {
+    return List.of(restTemplate.getForObject(urlManager.getUrl(postEndpoint),
+        PostPlaceHolder[].class));
+  }
+
+  @Override
+  public List<CommentPlaceHolder> getCommentRawdata() {
+    return List.of(restTemplate.getForObject(urlManager.getUrl(commentEndpoint),
+        CommentPlaceHolder[].class));
+  };
 }

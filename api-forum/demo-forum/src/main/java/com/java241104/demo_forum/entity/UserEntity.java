@@ -38,7 +38,7 @@ public class UserEntity {
   private String username;
   private String email;
 
-  @OneToOne(mappedBy = "user",
+  @OneToOne(mappedBy = "userEntity",
       cascade = {CascadeType.PERSIST, CascadeType.MERGE},
       fetch = FetchType.LAZY)
   private AddressEntity addressEntuty;
@@ -46,13 +46,13 @@ public class UserEntity {
   private String phone;
   private String website;
 
-  @OneToOne(mappedBy = "user",
+  @OneToOne(mappedBy = "userEntity",
       cascade = {CascadeType.PERSIST, CascadeType.MERGE},
       fetch = FetchType.LAZY)
   private CompanyEntity companyEntity;
 
   @Builder.Default
-  @OneToMany(mappedBy = "user",
+  @OneToMany(mappedBy = "userEntity",
       cascade = {CascadeType.PERSIST, CascadeType.MERGE},
       fetch = FetchType.LAZY)
   private List<PostEntity> posts = new ArrayList<>();

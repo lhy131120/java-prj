@@ -40,10 +40,12 @@ public class PostEntity {
   @JsonIgnore
   @ManyToOne
   @JoinColumn(name = "user_id")
-  private Long userId;
+  private UserEntity userEntity;
 
   @Builder.Default
-  @OneToMany(mappedBy = "posets", cascade = {CascadeType.MERGE},
+  @OneToMany(mappedBy = "postEntity", //
+      cascade = {CascadeType.PERSIST, //
+          CascadeType.MERGE}, //
       fetch = FetchType.LAZY)
   private List<CommentEntity> comments = new ArrayList<>();
 }

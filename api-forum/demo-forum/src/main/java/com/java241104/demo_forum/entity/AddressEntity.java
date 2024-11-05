@@ -43,5 +43,5 @@ public class AddressEntity {
   @JsonIgnore
   @OneToOne
   @JoinColumn(name = "user_id")
-  private UserEntity user;
+  private UserEntity userEntity;
 }

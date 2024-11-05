@@ -27,9 +27,12 @@ import lombok.ToString;
 public class CommentEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "comment_id")
   private Long id;
+
   private String name;
   private String email;
+
   @Column(length = 1000)
   private String body;
 
