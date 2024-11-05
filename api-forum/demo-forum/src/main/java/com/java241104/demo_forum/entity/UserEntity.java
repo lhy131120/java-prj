@@ -41,7 +41,7 @@ public class UserEntity {
   @OneToOne(mappedBy = "userEntity",
       cascade = {CascadeType.PERSIST, CascadeType.MERGE},
       fetch = FetchType.LAZY)
-  private AddressEntity addressEntuty;
+  private AddressEntity addressEntity;
 
   private String phone;
   private String website;

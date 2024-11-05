@@ -36,7 +36,8 @@ public class AddressEntity {
   private String city;
   private String zipcode;
 
-  @OneToOne(mappedBy = "address", cascade = {CascadeType.ALL},
+  @OneToOne(mappedBy = "address", //
+      cascade = {CascadeType.ALL}, //
       fetch = FetchType.LAZY)
   private GeoEntity geoEntity;
 
