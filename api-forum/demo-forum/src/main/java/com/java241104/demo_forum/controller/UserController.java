@@ -7,13 +7,15 @@ import com.java241104.demo_forum.model.DTO.UserCommentDTO;
 import com.java241104.demo_forum.model.DTO.UserDTO;
 
 public interface UserController {
-  @GetMapping("allUserPostComment")
+
+
+  @GetMapping("all")
   public List<UserDTO> getAll();
 
   @GetMapping()
-  public List<UserDTO> getUserByID(@RequestParam String userID);
+  public List<UserDTO> getUserByID(@RequestParam String userId);
 
   @GetMapping("getUserCommentByID") // ?userID=1
-  public List<UserCommentDTO> getUserCommentByID(@RequestParam String userID);
+  public List<UserCommentDTO> getUserCommentByID(@RequestParam String userId);
 
 }

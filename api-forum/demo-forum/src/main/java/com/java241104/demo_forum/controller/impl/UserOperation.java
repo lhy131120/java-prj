@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.java241104.demo_forum.controller.UserController;
-import com.java241104.demo_forum.entity.UserEntity;
 import com.java241104.demo_forum.mapper.JPHMapper;
 import com.java241104.demo_forum.model.DTO.UserCommentDTO;
 import com.java241104.demo_forum.model.DTO.UserDTO;
-import com.java241104.demo_forum.repository.UserRepository;
 import com.java241104.demo_forum.service.UserService;
 
 @RestController
